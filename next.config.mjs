@@ -1,9 +1,8 @@
-import type { NextConfig } from "next";
-
 const repoName = "zarvis-site";
 const isGithubPages = process.env.GITHUB_ACTIONS === "true";
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: "export",
   trailingSlash: true,
   images: {
