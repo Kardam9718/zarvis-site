@@ -8,19 +8,22 @@ const features = [
     title: "Silicon Valley Standard Design",
     description:
       "Aesthetics and systems that feel premium, world-class, and instantly trustworthy.",
-    icon: Sparkles
+    icon: Sparkles,
+    layout: "md:col-span-4"
   },
   {
     title: "Zero-Friction UX",
     description:
       "Interfaces engineered for mental ease and physical comfort on every interaction.",
-    icon: BrainCircuit
+    icon: BrainCircuit,
+    layout: "md:col-span-2"
   },
   {
     title: "Extreme Conversions",
     description:
       "Strategic user journeys that turn traffic into loyal users and revenue momentum.",
-    icon: Activity
+    icon: Activity,
+    layout: "md:col-span-6"
   }
 ];
 
@@ -33,7 +36,6 @@ export default function AdvantageBento() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-6">
           {features.map((item, idx) => {
             const Icon = item.icon;
-            const spanClass = idx === 0 ? "md:col-span-3" : "md:col-span-3";
 
             return (
               <motion.article
@@ -42,7 +44,7 @@ export default function AdvantageBento() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.08, duration: 0.5 }}
                 viewport={{ once: true, amount: 0.2 }}
-                className={`${spanClass} rounded-2xl glass glow-border p-6`}
+                className={`${item.layout} rounded-2xl glass glow-border p-6`}
               >
                 <Icon className="mb-4 text-emerald-300" size={22} />
                 <h3 className="text-xl font-semibold text-zinc-100">{item.title}</h3>
