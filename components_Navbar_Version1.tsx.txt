@@ -1,0 +1,39 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const WA_LINK =
+  "https://wa.me/919718751208?text=Hi%20Harsh,%20I%20want%20to%20build%20an%20empire.";
+
+export default function Navbar() {
+  return (
+    <header className="fixed top-0 z-50 w-full px-4 pt-4 md:px-6">
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.45 }}
+        className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl glass px-4 py-3"
+      >
+        <a href="#" className="text-sm font-semibold tracking-wide text-zinc-100">
+          zarvis.tech
+        </a>
+        <nav className="flex items-center gap-2">
+          <a
+            href="#work"
+            className="rounded-lg border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs font-semibold text-zinc-200 hover:border-emerald-300/50"
+          >
+            Work
+          </a>
+          <a
+            href={WA_LINK}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-lg bg-gradient-to-r from-cyan-300 to-emerald-400 px-3 py-2 text-xs font-bold text-black"
+          >
+            WhatsApp
+          </a>
+        </nav>
+      </motion.div>
+    </header>
+  );
+}
